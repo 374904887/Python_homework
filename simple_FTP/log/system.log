@@ -1,0 +1,4 @@
+2017-09-17 12:28:45,531 - system - ftp_client.py - 99 - INFO - 用户 zhonglu register 成功
+2017-09-17 12:29:20,728 - system - ftp_client.py - 208 - INFO - 用户 zhonglu 往服务端上传文件 english.flv ，总大小为 80892617 字节
+2017-09-17 12:29:28,622 - system - ftp_client.py - 163 - INFO - 用户 zhonglu 从服务端下载文件 english.flv，总大小为 80892617 字节
+2017-09-17 12:29:30,182 - system - ftp_client.py - 252 - INFO - 用户 zhonglu 执行命令 dir 查看家目录中文件信息，命令执行结果总大小为 388 字节

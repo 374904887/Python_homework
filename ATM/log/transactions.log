@@ -1,0 +1,6 @@
+2017-06-13 16:58:48,743 - transaction - transaction.py - 42 - INFO - account:123456   action:pay    amount:15000.0   interest:0.0
+2017-06-15 15:45:07,759 - transaction - transaction.py - 42 - INFO - account:123456   action:pay    amount:15000.0   interest:0.0
+2017-07-15 17:06:50,414 - transaction - transaction.py - 42 - INFO - account:123456   action:repay    amount:1000.0   interest:0.0
+2017-07-15 17:09:54,874 - transaction - transaction.py - 42 - INFO - account:123456   action:withdraw    amount:1000.0   interest:50.0
+2017-07-15 17:14:28,137 - transaction - transaction.py - 42 - INFO - account:123456   action:transfer    amount:50.0   interest:2.5
+2017-07-15 17:14:28,141 - transaction - transaction.py - 42 - INFO - account:000001   action:receive    amount:50.0   interest:0.0

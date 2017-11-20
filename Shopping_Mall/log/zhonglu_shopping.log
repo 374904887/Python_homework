@@ -1,0 +1,4 @@
+2017-07-15 15:45:23,623 - shopping - main.py - 266 - INFO - 帐号: zhonglu  操作: shopping  购买商品名: Iphone7  购买数量: 2  总价: 12376元
+2017-07-15 22:41:17,410 - shopping - main.py - 266 - INFO - 帐号: zhonglu  操作: shopping  购买商品名: Milk  购买数量: 1  总价: 59元
+2017-07-15 22:46:09,562 - shopping - main.py - 266 - INFO - 帐号: zhonglu  操作: shopping  购买商品名: Coffee  购买数量: 1  总价: 30元
+2017-07-15 22:54:01,026 - shopping - main.py - 266 - INFO - 帐号: zhonglu  操作: shopping  购买商品名: Coffee  购买数量: 1  总价: 30元
