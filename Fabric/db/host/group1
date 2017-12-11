@@ -1,0 +1,14 @@
+[192.168.0.169]
+username = root
+password = 123456
+port = 22
+
+[192.168.0.244]
+username = root
+password = 111111
+port = 22
+
+[192.168.157.128]
+username = root
+password = zhonglu
+port = 22
