@@ -1,0 +1,134 @@
+SELECTORS版FTP程序说明
+
+
+一、基本功能介绍
+1.socketserver利用IO多路复用支持大并发；
+2.可以多连接并发的注册帐号或登陆帐号；
+3.多用户可以并发执行dir系统命令；
+4.多用户可以并发上传文件或下载文件；
+5.SELECTORS版FTP程序使用帮助功能；
+6.退出程序功能；
+7.日志功能：将登陆帐号、执行系统命令、上传文件、下载文件的操作记录保存到日志文件中；
+
+
+二、运行环境
+pycharm版本：pycharm professional 2016.3
+python版本：python 3.5.2
+
+
+三、移植性
+该程序只能在windows系统上运行
+
+
+四、目录结构及说明
+./
+├── SELECTORS_FTP  # SELECTORS版FTP目录
+│   │
+│   ├── client  # ftp client目录
+│   │   │
+│   │   ├── bin  # ftp client程序执行文件目录
+│   │   │   ├── client.py  # ftp client程序入口程序
+│   │   │   └── __init__.py
+│   │   │
+│   │   ├── conf  # ftp client程序配置目录
+│   │   │   ├── __init__.py
+│   │   │   └── settings.py  # ftp client程序配置文件
+│   │   │
+│   │   ├── core  # ftp client程序主要逻辑程序目录
+│   │   │   ├── __init__.py
+│   │   │   └── main.py  # ftp client程序主逻辑程序
+│   │   │
+│   │   └── file  # ftp client程序存放上传和下载文件目录
+│   │       └── Try.mp3  # 测试的音频文件
+│   │
+│   └── server  # ftp server目录
+│       │
+│       ├── bin  # ftp server程序执行文件目录
+│       │   ├── __init__.py
+│       │   └── server.py  # ftp server程序入口程序
+│       │
+│       ├── conf  # ftp server程序配置目录
+│       │   ├── __init__.py
+│       │   └── settings.py  # ftp server程序配置文件
+│       │
+│       ├── core  # ftp server程序主要逻辑程序目录
+│       │   ├── __init__.py
+│       │   ├── logger.py  # 日志记录模块
+│       │   └── main.py  # ftp server程序主逻辑程序
+│       │
+│       ├── db  # 数据存储目录
+│       │   ├── __init__.py
+│       │   │
+│       │   └── accounts  # 存各个用户数据的目录
+│       │       ├── sunshine.json  # 普通用户账户文件，一个用户一个文件
+│       │       └── zhonglu.json
+│       │
+│       ├── home  # ftp server上用户家目录主目录
+│       │   ├── __init__.py
+│       │   │
+│       │   ├── sunshine  # 普通用户家目录，一个用户一个目录
+│       │   └── zhonglu
+│       │
+│       └── log  # 日志目录
+│           ├── __init__.py
+│           ├── download_file.log  # 下载文件的日志
+│           ├── register_login_accounts.log  # 注册帐号和登陆帐号的日志
+│           ├── shell_command.log  # 执行系统shell命令的日志
+│           └── upload_file.log    # 上传文件的日志
+│
+├── Readme  # SELECTORS版FTP程序的说明文件
+│
+└── SELECTORS版FTP流程图.png  # SELECTORS版FTP程序运行流程图
+
+
+五、程序运行方法
+1.将 SELECTORS_FTP 目录（包含目录中的文件）导入pycharm中；
+2.先运行FTP Server，运行 SELECTORS_FTP/server/bin/server.py文件；
+3.在运行FTP Client，运行 SELECTORS_FTP/client/bin/client.py文件；
+
+
+六、程序使用方法说明
+1.多用户注册和多用户登陆功能
+  ⑴.多用户注册
+    ● 可以同时开启多个ftp client连接ftp server进行用户注册
+    ● 根据提示输入用户名和用户密码。当用户名或密码为空时，用户名已存在时，系统要求重新输入。注册成功后才能进行其他操作；
+    ● 注册成功后，会在ftp server上自动创建用户家目录；
+  ⑵.多用户登陆
+    ● 可以同时开启多个ftp client连接ftp server进行用户登陆
+    ● 根据提示输入用户名和用户密码。当用户名不存在或密码错误时，系统要求重新输入。登陆成功后才能进行其他操作；
+
+2.查看在ftp server上家目录中的文件信息
+  命令示例：
+    ● dir：查看ftp server上家目录中的文件信息
+
+3.从ftp server下载文件
+  将ftp server上家目录中的文件下载到本地 SELECTORS_FTP/client/file/ 目录中
+  命令示例：
+    ● get Try.mp3：下载ftp server上的家目录中的Try.mp3文件
+
+4.上传文件到ftp server上
+  将本地 SELECTORS_FTP/client/file/ 目录中的文件上传到ftp server上家目录中
+  命令示例：
+    ● put put Try.mp3：将ftp client的 SELECTORS_FTP/file/FTPTry.mp3 文件上传到ftp server上的家目录中
+
+5.结束程序运行，退出整个程序
+  命令示例：
+    ● eixt
+
+6.查看FTP程序使用帮助信息
+  命令示例：
+    ● help
+
+
+七、程序使用知识点
+1.python简单数据结构的使用：字符串、整型、列表、字典、类、函数等；
+2.python的os、sys、logging、prettytable、socket、selectors、json、subprocess、queue、hashlib模块的使用；
+3.python类的定义及调用；
+4.python函数的定义及调用；
+5.python对异常捕获，try语句；
+7.python基本语法的使用：while循环、for循环、if判断；
+
+
+八、相关地址链接
+博客地址：
+GitHub地址：
